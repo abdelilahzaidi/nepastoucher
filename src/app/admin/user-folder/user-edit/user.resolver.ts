@@ -1,7 +1,7 @@
 import { inject } from "@angular/core";
 import { ActivatedRouteSnapshot, ResolveFn, RouterStateSnapshot } from "@angular/router";
 import { Observable } from "rxjs";
-import { UserService } from "../service/user.service";
+import { UserService } from "../../service/user.service";
 
 export function userResolver(): ResolveFn<any> {
     return (

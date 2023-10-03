@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { UserService } from '../service/user.service';
+import { UserService } from '../../service/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { fUserEdit } from './edit.form';
 
@@ -16,9 +16,9 @@ export class UserEditComponent implements OnInit {
   userEditForm: FormGroup = fUserEdit({})
 
   constructor(private userService: UserService, private router :Router, private $route: ActivatedRoute) {
-    
+
   }
- 
+
   ngOnInit() {
     this.$route.data.subscribe(({user}) => {
       this.user = user ;
@@ -30,7 +30,7 @@ export class UserEditComponent implements OnInit {
     console.log(this.user)
     this.userService.updateUser(this.user.id,this.userEditForm.value).subscribe({
       next : (data)=>{
-        
+
         this.response$ = data;
         this.router.navigate(['admin-home']);
         alert("User has been successfully updated");

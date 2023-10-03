@@ -1,16 +1,21 @@
-import { UserEditComponent } from './user-edit/user-edit.component';
+import { UserEditComponent } from './user-folder/user-edit/user-edit.component';
 UserEditComponent
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { HomeComponent } from './home/home.component';
-import { UserComponent } from './user/user.component';
-import { UserNewComponent } from './user-new/user-new.component';
+import { UserComponent } from './user-folder/user/user.component';
+import { UserNewComponent } from './user-folder/user-new/user-new.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminComponent } from './container/admin.component';
 import { MenuComponent } from './menu/menu.component';
 import { ProgramComponent } from './home/program/program.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserListComponent } from './user-folder/user-list/user-list.component';
+import { UserDetailsComponent } from './user-folder/user-details/user-details.component';
+import { ProgramListComponent } from './program-folder/program-list/program-list.component';
+
 
 
 
@@ -22,7 +27,11 @@ import { ProgramComponent } from './home/program/program.component';
     UserEditComponent,
     AdminComponent,
     MenuComponent,
-    ProgramComponent
+    ProgramComponent,
+    DashboardComponent,
+    UserListComponent,
+    UserDetailsComponent,
+    ProgramListComponent
   ],
   imports: [
     CommonModule,

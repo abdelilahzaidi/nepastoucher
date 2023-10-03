@@ -1,4 +1,4 @@
-import { UserEditComponent } from './admin/user-edit/user-edit.component';
+import { UserEditComponent } from './admin/user-folder/user-edit/user-edit.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -14,6 +14,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { AuthGuardAdmin } from './guards/auth-admin.guard';
 import { AdminModule } from './admin/admin.module';
 import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 
 
