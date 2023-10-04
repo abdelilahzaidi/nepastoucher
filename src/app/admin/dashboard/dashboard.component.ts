@@ -18,8 +18,7 @@ export class DashboardComponent {
     {route:"../home",title:"Lieu","icon":"person"},
     {route:"../gpt",title:"Seance","icon":"person"},
     {route:"../home",title:"Facture","icon":"person"},
-    {route:"../home",title:"Message","icon":"person"},
-    {route:"../home",title:"Logout","icon":"person"}
+    {route:"../home",title:"Message","icon":"person"},    
   ]
   title = 'than-long-client';
   user$: Observable<any>

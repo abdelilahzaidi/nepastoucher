@@ -1,1 +1,54 @@
-<p>user-details works!</p>
+<div *ngIf="user" style="
+          width: 90%;
+          margin-right: 10px;
+          margin-left: 45px;
+          margin-top: 20px;
+        " (click)="getUserById(user)">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <table class="table">
+                  <tr>
+                    <th>Nom</th>
+                    <td>{{ user.first_name }}</td>
+                  </tr>
+                  <tr>
+                    <th>Prénom</th>
+                    <td>{{ user.last_name }}</td>
+                  </tr>
+                  <tr>
+                    <th>Genre</th>
+                    <td>{{ user.gender }}</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="col-md-6">
+                <table class="table">
+                  <tr>
+                    <th>Adresse</th>
+                    <td>{{ user.adress }}</td>
+                  </tr>
+                  <tr>
+                    <th>Date de naissance</th>
+                    <td>{{ user.birthDate | date : "yyyy-MM-dd" }}</td>
+                  </tr>
+                  <tr>
+                    <th>Statut</th>
+                    <td>{{ user.status }}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div style="
+      width: 90%;
+      margin-right: 10px;
+      margin-left: 45px;
+      margin-top: 20px;
+    " >
+        
+      </div>
