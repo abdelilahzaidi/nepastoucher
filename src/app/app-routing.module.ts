@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
+ 
   {
      path : "users",
      loadChildren : ()=>
@@ -21,6 +22,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./auth/auth.module').then(
         a => a.AuthModule
+      )
+  },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./page-no-conected/page-no-conected-routing.module').then(
+        p =>p.PageNoConectedRoutingModule
       )
   }
 ];

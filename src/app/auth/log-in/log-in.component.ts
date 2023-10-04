@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { SessionService } from 'src/app/services/session.service';
 
 
 
@@ -20,25 +21,35 @@ export class LogInComponent {
   constructor(private formBuilder: FormBuilder,
     private authService: AuthService,
     private router: Router,
+    private $session: SessionService
 
     ) { }
 
   onSubmit() {
 
     this.authService.userLogIn(this.loginForm.value).subscribe(
-      (data: any) => {
-        console.log('return value token', data)
-        window.localStorage.setItem('token', data.token)
-        this.authService.verifiedUser(data.token).subscribe(
-          res => {
-              console.log(res)
-              if (res.status ==='admin') {
-                this.router.navigate(['/admin-home'])
-              } else {
-                  this.router.navigate(['/users'])
-              }
-          }
-        )
+      ({token, user}: any) => {
+        this.$session.open({ token, user });
+        if (user.status === 'admin') {
+          this.router.navigate(["/admin/dashboard"])
+          return;
+        }
+        else if(user.status === 'responsable'){
+          this.router.navigate(["/users/responsable"])
+          return;
+        }
+        this.router.navigate(['/users'])
+        return;
+        // this.authService.verifiedUser(token).subscribe(
+        //   ({user}) => {
+        //       console.log(user)
+        //       if (user.status ==='admin') {
+        //         this.router.navigate(['/admin-home'])
+        //       } else {
+        //           this.router.navigate(['/users'])
+        //       }
+        //   }
+        // )
       }
     )
   }

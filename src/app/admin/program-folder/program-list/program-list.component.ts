@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from '../../service/user.service';
 import { ProgramService } from 'src/app/services/program/program.service';
 
 @Component({

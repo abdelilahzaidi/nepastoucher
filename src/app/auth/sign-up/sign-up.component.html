@@ -23,8 +23,16 @@
   </div>
 
   <div>
-    <label for="adress" class="form-label">Adresse</label>
-    <input type="text" class="form-control" id="adress" required  formControlName="adress">
+    <label for="rue" class="form-label">Rue</label>
+    <input type="text" class="form-control" id="adress" required  formControlName="rue">
+  </div>
+  <div>
+    <label for="commune" class="form-label">Commnue</label>
+    <input type="text" class="form-control" id="commune" required  formControlName="commune">
+  </div>
+  <div>
+    <label for="ville" class="form-label">Ville</label>
+    <input type="text" class="form-control" id="ville" required  formControlName="ville">
   </div>
 
   <div>
@@ -46,12 +54,15 @@
       <option value="member"   id="status" for="status">Member</option>
     </select>
   </div>
+ 
+
   <div >
     <label  class="form-label" for="grade">Grade</label>
     <select class="form-select" id="grade" for="grade" formControlName="grade" required>
       <option selected disabled value="">Choose...</option>
-      <option value="0 CAP" id="grade" for="grade" >0 cap</option>
-      <option value="1er CAP" id="grade" for="grade" >1er cap</option>
+      <option *ngFor="let it of grades$ |async" [value]="it.id">{{ it.grade }}</option>
+      <!-- <option value="0 CAP" id="grade" for="grade" >0 cap</option>
+      <option value="1er CAP" id="grade" for="grade" >1er cap</option> -->
     </select>
   </div>
 

@@ -1,5 +1,6 @@
 import {HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   userLogIn (user: any) {
-    return this.http.post(this.apiUrl + '/auth/login', user)
+    return this.http.post<{user: any}>(this.apiUrl + '/auth/login', user).pipe(tap(({user}) => this.currentUser = { ...user }))
   }
 
   signupUser(user: any) {

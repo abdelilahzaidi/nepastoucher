@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-sign-up',
@@ -11,13 +13,15 @@ import { Router } from '@angular/router';
 export class SignUpComponent {
 
   response$ :any;
-  constructor(private fb : FormBuilder, private authService : AuthService,private router: Router){}
+  constructor(private fb : FormBuilder, private authService : AuthService,private router: Router, private $http: HttpClient){}
   userForm : FormGroup = this.fb.group({
     first_name:[''],
     last_name:[''],
     gender:[''],
     email:[''],
-    adress:[''],
+    rue:[''],
+    commune:[''],
+    ville:[''],
     birthDate:[''],
     actif:[''],
     gsm:[''],
@@ -27,8 +31,11 @@ export class SignUpComponent {
     password_confirm:['']
 
   })
-  ngOnInit(){
 
+  grades$: Observable<any[]> = of([])
+
+  ngOnInit(){
+    this.grades$ = this.$http.get<any[]>('http://localhost:3001/level')
   }
 
   async submit() {
@@ -39,7 +46,7 @@ export class SignUpComponent {
         (res:any) => {
           console.log('Réponse du serveur :', res);
           this.response$ = res; // Si vous avez besoin de stocker la réponse          
-          this.router.navigate(['auth/signin'])      
+          this.router.navigate(['/auth/login'])      
          
         },
         (error) => {

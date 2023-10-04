@@ -52,7 +52,7 @@ export class UserListComponent implements OnInit {
     this.userService.getUserById(u.id).subscribe({
       next: (data) => {
         this.user = data;
-        this.router.navigate(['/user-details', u.id]);
+        this.router.navigate(['/admin/user-details', u.id]);
       },
       error: (err) => {
         this.errorMessage = err.error;
@@ -64,9 +64,11 @@ export class UserListComponent implements OnInit {
 
 
 
-  handleEditUser(u: any) {
+  handleEditUser($event: Event, u: any) {
+    $event.preventDefault();
+    $event.stopPropagation();
     console.log('up',u.id);
-    this.router.navigate(['/user-edit', u.id]);
+    this.router.navigate(['/admin/user-edit', u.id]);
   }
 
 }

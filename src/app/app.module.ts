@@ -1,19 +1,21 @@
-import { UserEditComponent } from './admin/user-folder/user-edit/user-edit.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { UsersModule } from './users/users.module';
-
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptorService } from './auth/authInterceptorService';
 import { AuthGuard } from './guards/auth.guard';
-import { AuthGuardAdmin } from './guards/auth-admin.guard';
 import { AdminModule } from './admin/admin.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './page-no-conected/home/home.component';
+import { PageNoConectedModule } from './page-no-conected/page-no-conected.module';
+import { VovinamComponent } from './page-no-conected/vovinam/vovinam.component';
+import { TeamComponent } from './team/team.component';
+import { MemberComponent } from './member/member.component';
+import { ResponsableComponent } from './responsable/responsable.component';
+
 
 
 
@@ -24,6 +26,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    VovinamComponent,
+    TeamComponent,
+    MemberComponent,    
+    ResponsableComponent,    
   ],
   imports: [
     BrowserModule,
@@ -31,6 +38,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     UsersModule,
     AdminModule,
+    PageNoConectedModule,
     HttpClientModule,
     ReactiveFormsModule
 
@@ -43,7 +51,6 @@ import { ReactiveFormsModule } from '@angular/forms';
       multi:true
     },
     AuthGuard,
-    AuthGuardAdmin
   ],
   bootstrap: [AppComponent]
 })

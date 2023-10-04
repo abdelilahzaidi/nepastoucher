@@ -26,7 +26,7 @@ style="margin-left: 45px">
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of users" (click)="getUserById(user)">
+      <tr *ngFor="let user of users"(click)="getUserById(user)">
         <td>{{ user.first_name }}</td>
         <td>{{ user.last_name }}</td>
         <td>{{ user.level.grade }}</td>
@@ -35,7 +35,7 @@ style="margin-left: 45px">
         <td>{{ user.level?.grade }}</td>
         <td>{{ user.actif }}</td>
         <td>
-          <button class="btn btn-success" (click)="getUserById(user)">
+          <button class="btn btn-success" (click)="handleEditUser($event, user)">
             <i class="bi bi-pencil-fill"></i>
           </button>
         </td>

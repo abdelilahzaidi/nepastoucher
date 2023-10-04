@@ -11,27 +11,28 @@
     <div class="collapse navbar-collapse " id="navbarColor01" style="margin-top:80px; margin-left: 120px;">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Accueil
+          <a class="nav-link active" href="/home">Accueil
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Le vovinam</a>
+          <a class="nav-link" href="/vovinam">Le vovinam</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Team</a>
+          <a class="nav-link" href="/team">Team</a>
         </li>
 
       </ul>
       <ul class="navbar-nav ml-auto"> <!-- Utilisez ml-auto ici -->
         <li class="nav-item dropdown me-5 d-flex">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false" *ngIf="!isLoggedIn()">Espace personnel</a>
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">Espace personnel</a>
           <div class="dropdown-menu bg-primary" style="margin-left:-15px; ">
-            <a class="dropdown-item" routerLink="auth/login">Login</a>
-            <a class="dropdown-item" routerLink="auth/register">Register</a>
-            <div class="dropdown-divider">
-
-            </div>
+            <a class="dropdown-item" routerLink="auth/login" *ngIf="!isLoggedIn()" >Login</a>
+            <a class="dropdown-item" routerLink="auth/signup" *ngIf="!isLoggedIn()" >Register</a>
+            <a class="dropdown-item"  *ngIf="isLoggedIn()" (click)="doLogout()">
+              logout
+              <i class="bi bi-box-arrow-right" ></i>
+            </a>            
           </div>
         </li>
       </ul>
