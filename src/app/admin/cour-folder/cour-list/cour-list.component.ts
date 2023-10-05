@@ -2,26 +2,26 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LieuService } from 'src/app/services/lieu/lieu.service';
+import { CourService } from 'src/app/services/cour/cour.service';
 
 @Component({
-  selector: 'app-lieu-list',
-  templateUrl: './lieu-list.component.html',
-  styleUrls: ['./lieu-list.component.css']
+  selector: 'app-cour-list',
+  templateUrl: './cour-list.component.html',
+  styleUrls: ['./cour-list.component.css']
 })
-export class LieuListComponent  {
+export class CourListComponent {
 
   errorMessage: any;
   constructor(
     private httpClient: HttpClient,
     private fb: FormBuilder,
-    private lieuService: LieuService,
+    private courservice: CourService,
     private router: Router
   ) {}
   apiUrl = 'http://localhost:3001';
   user: any;
- lieu: any;
- lieus: any[] = [];
+ cour: any;
+ cours: any[] = [];
 
   response$: any;
 
@@ -30,21 +30,21 @@ export class LieuListComponent  {
     this.httpClient
       .get<any[]>(this.apiUrl + '/lieu')
       .subscribe((data) => {
-        this.lieu = data;
+        this.cour = data;
       });
-    this.getlieus();
+    this.getCours();
   }
 
 
 
-  getlieus() {
-    console.log('lieus');
+  getCours() {
+    console.log('cours');
     this.httpClient
-      .get<any[]>('http://localhost:3001/lieu')
+      .get<any[]>('http://localhost:3001/cour')
       .subscribe({
         next: (data) => {
-          this.lieus = data as [];
-          console.log('lieux', this.lieus);
+          this.cours = data as [];
+          console.log('lieux', this.cours);
         },
         error: (err) => {
           console.log(err);
@@ -54,7 +54,7 @@ export class LieuListComponent  {
 
   // getlieuById(p: any) {
   //   console.log("Un prog")
-  //   this.lieuService.getlieuById(p.id).subscribe({
+  //   this.courservice.getlieuById(p.id).subscribe({
   //     next: (data) => {
   //       this.lieu = data
   //       console.log("lieu", data)

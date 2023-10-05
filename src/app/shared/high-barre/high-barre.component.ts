@@ -19,6 +19,8 @@ export class HighBarreComponent {
     {route:"../niveau-list",title:"Niveau","icon":"person"},
     {route:"../horaire-list",title:"Horaire","icon":"person"},
     {route:"../lieu-list",title:"Lieu","icon":"person"},
+    {route:"../cour-list",title:"Cour","icon":"person"},
+    {route:"../date-cour-list",title:"Date cour","icon":"person"},
     {route:"../seance-list",title:"Seance","icon":"person"},
     {route:"../facture-list",title:"Facture","icon":"person"},
     {route:"../message-list",title:"Message","icon":"person"},

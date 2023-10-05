@@ -23,6 +23,8 @@ import { LieuListComponent } from './admin/lieu-folder/lieu-list/lieu-list.compo
 import { SeanceListComponent } from './admin/seance-folder/seance-list/seance-list.component';
 import { FactureListComponent } from './admin/facture-folder/facture-list/facture-list.component';
 import { MessageListComponent } from './admin/message-folder/message-list/message-list.component';
+import { CourListComponent } from './admin/cour-folder/cour-list/cour-list.component';
+import { DateCourListComponent } from './admin/date-cour-folder/date-cour-list/date-cour-list.component';
 
 
 
@@ -49,6 +51,8 @@ import { MessageListComponent } from './admin/message-folder/message-list/messag
     SeanceListComponent,
     FactureListComponent,
     MessageListComponent,
+    CourListComponent,
+    DateCourListComponent,
   ],
   imports: [
     BrowserModule,

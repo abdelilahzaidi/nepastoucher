@@ -18,6 +18,8 @@ import { LieuListComponent } from './lieu-folder/lieu-list/lieu-list.component';
 import { SeanceListComponent } from './seance-folder/seance-list/seance-list.component';
 import { MessageListComponent } from './message-folder/message-list/message-list.component';
 import { FactureListComponent } from './facture-folder/facture-list/facture-list.component';
+import { CourListComponent } from './cour-folder/cour-list/cour-list.component';
+import { DateCourListComponent } from './date-cour-folder/date-cour-list/date-cour-list.component';
 
 const routes: Routes = [
   { path: 'admin', canActivateChild: [ authAdminGuard()], children: [
@@ -35,7 +37,9 @@ const routes: Routes = [
     {path:'lieu-list',component:LieuListComponent},
     {path:'seance-list',component:SeanceListComponent},
     {path:'message-list',component:MessageListComponent},
-    {path:'facture-list',component:FactureListComponent}
+    {path:'facture-list',component:FactureListComponent},
+    {path:'cour-list',component:CourListComponent},
+    {path:'date-cour-list',component:DateCourListComponent}
 
   ]}
 

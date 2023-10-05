@@ -2,7 +2,7 @@
   <ul class="nav nav-pills">
     <li *ngFor="let action of actions">
       <button [routerLink]="[action.route]"
-      [ngClass]="action === currentAction?'btn btn-primary ms-1':'btn btn-outline-primary ms-4 mx-4'"
+      [ngClass]="action === currentAction?'btn btn-primary ms-1':'btn btn-outline-primary ms-1 mx-1'"
      >
         {{action.title}}
         <i class="bi bi-{{action.icon}}"></i>
