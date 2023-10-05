@@ -17,6 +17,12 @@ import { MemberComponent } from './member/member.component';
 import { ResponsableComponent } from './responsable/responsable.component';
 import { NiveauComponent } from './admin/niveau-folder/niveau/niveau.component';
 import { UserEditStatusComponent } from './admin/user-folder/user-edit-status/user-edit-status.component';
+import { NiveauListComponent } from './admin/niveau-folder/niveau-list/niveau-list.component';
+import { HoraireListComponent } from './admin/horaire-folder/horaire-list/horaire-list.component';
+import { LieuListComponent } from './admin/lieu-folder/lieu-list/lieu-list.component';
+import { SeanceListComponent } from './admin/seance-folder/seance-list/seance-list.component';
+import { FactureListComponent } from './admin/facture-folder/facture-list/facture-list.component';
+import { MessageListComponent } from './admin/message-folder/message-list/message-list.component';
 
 
 
@@ -37,6 +43,12 @@ import { UserEditStatusComponent } from './admin/user-folder/user-edit-status/us
     ResponsableComponent,
     NiveauComponent,
     UserEditStatusComponent,
+    NiveauListComponent,
+    HoraireListComponent,
+    LieuListComponent,
+    SeanceListComponent,
+    FactureListComponent,
+    MessageListComponent,
   ],
   imports: [
     BrowserModule,
