@@ -35,6 +35,6 @@ export class UserDetailsComponent {
       });
   }
   handleUpdateUserActif() {
-    this.router.navigate(['admin/user-edit-status']);
+    this.router.navigate(['admin/user-edit-status/:id']);
   }
 }

@@ -16,6 +16,7 @@ import { TeamComponent } from './team/team.component';
 import { MemberComponent } from './member/member.component';
 import { ResponsableComponent } from './responsable/responsable.component';
 import { NiveauComponent } from './admin/niveau-folder/niveau/niveau.component';
+import { UserEditStatusComponent } from './admin/user-folder/user-edit-status/user-edit-status.component';
 
 
 
@@ -35,6 +36,7 @@ import { NiveauComponent } from './admin/niveau-folder/niveau/niveau.component';
     MemberComponent,
     ResponsableComponent,
     NiveauComponent,
+    UserEditStatusComponent,
   ],
   imports: [
     BrowserModule,
