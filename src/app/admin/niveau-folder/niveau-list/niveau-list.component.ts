@@ -44,7 +44,7 @@ export class NiveauListComponent  {
       .subscribe({
         next: (data) => {
           this.levels = data as [];
-          console.log('user', this.levels);
+          console.log('Niveaux', this.levels);
         },
         error: (err) => {
           console.log(err);
