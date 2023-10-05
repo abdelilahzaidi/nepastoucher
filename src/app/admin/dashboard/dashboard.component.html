@@ -1,14 +1,10 @@
+
+
+
 <div class="p-3 high-barre">
-  <ul class="nav nav-pills">
-    <li *ngFor="let action of actions">
-      <button [routerLink]="[action.route]"
-      [ngClass]="action === currentAction?'btn btn-success ms-1':'btn btn-outline-success ms-1'"
-       >
-        {{action.title}}
-        <i class="bi bi-{{action.icon}}"></i>
-      </button>
-    </li>
-  </ul>
+  <app-high-barre></app-high-barre>
+
+
   <div style="flex-grow: 3" *ngIf="user$ |async as user">
     <div class="navbar navbar-dark">
       <div class="container-fluid border bg-dark" style="
@@ -26,11 +22,6 @@
         <ul class="navbar-nav" style="margin-right: 10px; display: flex; flex-direction: row">
           <li>
             <a class="nav-link"> {{ user.status }} </a>
-          </li>
-          <li>
-            <a class="btn nav-link m-4">
-              <i class="bi bi-box-arrow-right" (click)="doLogout()"></i>
-            </a>
           </li>
         </ul>
       </div>

@@ -52,13 +52,14 @@ export class UserListComponent implements OnInit {
     this.userService.getUserById(u.id).subscribe({
       next: (data) => {
         this.user = data;
+        console.log("user ",u.id," données : ",this.user)
         this.router.navigate(['/admin/user-details', u.id]);
       },
       error: (err) => {
         this.errorMessage = err.error;
       },
     });
-    console.log('Hello user',u.id);
+    console.log('Hello user',u);
   }
 
 

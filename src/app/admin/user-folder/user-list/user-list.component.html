@@ -29,7 +29,7 @@ style="margin-left: 45px">
       <tr *ngFor="let user of users"(click)="getUserById(user)">
         <td>{{ user.first_name }}</td>
         <td>{{ user.last_name }}</td>
-        <td>{{ user.level.grade }}</td>
+        <td>{{ user.level?.grade }}</td>
         <td>{{ user.attributionDate | date:'yyyy-MM-dd' }}</td>
         <td>{{ user.birthDate | date:'yyyy-MM-dd' }}</td>
         <td>{{ user.level?.grade }}</td>

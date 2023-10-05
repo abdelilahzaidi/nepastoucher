@@ -15,6 +15,9 @@ import { VovinamComponent } from './page-no-conected/vovinam/vovinam.component';
 import { TeamComponent } from './team/team.component';
 import { MemberComponent } from './member/member.component';
 import { ResponsableComponent } from './responsable/responsable.component';
+import { NiveauComponent } from './admin/niveau-folder/niveau/niveau.component';
+
+
 
 
 
@@ -29,8 +32,9 @@ import { ResponsableComponent } from './responsable/responsable.component';
     HomeComponent,
     VovinamComponent,
     TeamComponent,
-    MemberComponent,    
-    ResponsableComponent,    
+    MemberComponent,
+    ResponsableComponent,
+    NiveauComponent,
   ],
   imports: [
     BrowserModule,

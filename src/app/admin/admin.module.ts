@@ -14,26 +14,28 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserListComponent } from './user-folder/user-list/user-list.component';
 import { UserDetailsComponent } from './user-folder/user-details/user-details.component';
 import { ProgramListComponent } from './program-folder/program-list/program-list.component';
+import { HighBarreComponent } from "../shared/high-barre/high-barre.component";
 
 
 
 
 @NgModule({
-  declarations: [
-    UserComponent,
-    UserNewComponent,
-    UserEditComponent,
-    AdminComponent,
-    MenuComponent,
-    DashboardComponent,
-    UserListComponent,
-    UserDetailsComponent,
-    ProgramListComponent
-  ],
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    FormsModule,ReactiveFormsModule
-  ]
+    declarations: [
+        UserComponent,
+        UserNewComponent,
+        UserEditComponent,
+        AdminComponent,
+        MenuComponent,
+        DashboardComponent,
+        UserListComponent,
+        UserDetailsComponent,
+        ProgramListComponent
+    ],
+    imports: [
+        CommonModule,
+        AdminRoutingModule,
+        FormsModule, ReactiveFormsModule,
+        HighBarreComponent
+    ]
 })
 export class AdminModule { }

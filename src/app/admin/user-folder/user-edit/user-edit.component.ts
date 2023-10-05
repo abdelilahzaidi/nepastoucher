@@ -32,7 +32,7 @@ export class UserEditComponent implements OnInit {
       next : (data)=>{
 
         this.response$ = data;
-        this.router.navigate(['admin-home']);
+        this.router.navigate(['admin/user-list']);
         alert("User has been successfully updated");
       }, error : err => {
         this.errorMessage=err;
