@@ -31,7 +31,7 @@ export class LogInComponent {
       ({token, user}: any) => {
         this.$session.open({ token, user });
         if (user.status === 'admin') {
-          this.router.navigate(["/admin/dashboard"])
+          this.router.navigate(["/admin"])
           return;
         }
         else if(user.status === 'responsable'){

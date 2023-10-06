@@ -72,5 +72,9 @@ export class UserListComponent implements OnInit {
     this.router.navigate(['/admin/user-edit', u.id]);
   }
 
+
+  createUser() {    
+    this.router.navigate(['/admin/user-new']);
+  }
 }
 

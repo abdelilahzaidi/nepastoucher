@@ -22,7 +22,7 @@ export class UserEditStatusComponent implements OnInit {
   ngOnInit() {
     this.$route.data.subscribe(({user}) => {
       this.user = user ;
-      this.userEditForm = fUserEdit(user)
+      this.userEditForm = fUserEditActif(user)
     })
   }
 

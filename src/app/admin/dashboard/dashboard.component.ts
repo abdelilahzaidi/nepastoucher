@@ -10,16 +10,6 @@ import { SessionService } from 'src/app/services/session.service';
 })
 export class DashboardComponent {
   currentAction : any
-  actions=[
-    {route:"../user-list",title:"Utilisateur","icon":"person"},
-    {route:"../program-list",title:"Programme","Programme":"person"},
-    {route:"../niveau-list",title:"Niveau","icon":"person"},
-    {route:"../horaire-list",title:"Horaire","icon":"person"},
-    {route:"../home",title:"Lieu","icon":"person"},
-    {route:"../gpt",title:"Seance","icon":"person"},
-    {route:"../home",title:"Facture","icon":"person"},
-    {route:"../home",title:"Message","icon":"person"},
-  ]
   title = 'than-long-client';
   user$: Observable<any>
   constructor(

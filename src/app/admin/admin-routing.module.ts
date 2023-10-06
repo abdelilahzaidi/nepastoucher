@@ -20,10 +20,11 @@ import { MessageListComponent } from './message-folder/message-list/message-list
 import { FactureListComponent } from './facture-folder/facture-list/facture-list.component';
 import { CourListComponent } from './cour-folder/cour-list/cour-list.component';
 import { DateCourListComponent } from './date-cour-folder/date-cour-list/date-cour-list.component';
+import { AdminComponent } from './container/admin.component';
 
 const routes: Routes = [
-  { path: 'admin', canActivateChild: [ authAdminGuard()], children: [
-    {path:'dashboard',component:DashboardComponent}, // /admin
+  { path: '', component: AdminComponent, canActivateChild: [ authAdminGuard()], children: [
+    // {path:'dashboard',component:DashboardComponent}, // /admin
     {path:'user-list',component:UserListComponent}, // /admin/user-list
     {path:'user-new',component:UserNewComponent},
     {path:'user',component:UserComponent, canActivate: [AuthGuard]},

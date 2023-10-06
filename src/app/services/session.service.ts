@@ -19,10 +19,18 @@ export class SessionService {
       if (token) {
         localStorage.setItem("token", token);
       } else if (localStorage.getItem("token")) {
-        localStorage.removeItem("token")
+        this.token$.next(localStorage.getItem("token"))
+      }
+    })
+    this.User$.subscribe(user => {
+      if (user) {
+        localStorage.setItem("user", JSON.stringify(user))
+      } else if (localStorage.getItem("user") != null) {
+        this.user$.next(JSON.parse(localStorage.getItem("user")!))
       }
     })
     this.token$.next(localStorage.getItem('token'))
+    this.user$.next(JSON.parse(localStorage.getItem("user")!))
   }
 
   open(data: {token: string, user: any}) {

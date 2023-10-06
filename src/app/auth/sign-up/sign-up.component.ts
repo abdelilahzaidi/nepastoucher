@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
@@ -11,24 +11,24 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent {
-
+  errorMessage: any;
   response$ :any;
   constructor(private fb : FormBuilder, private authService : AuthService,private router: Router, private $http: HttpClient){}
   userForm : FormGroup = this.fb.group({
-    first_name:[''],
-    last_name:[''],
-    gender:[''],
-    email:[''],
-    rue:[''],
-    commune:[''],
-    ville:[''],
-    birthDate:[''],
-    actif:[''],
-    gsm:[''],
-    grade:[''],
-    status:[''],
-    password:[''],
-    password_confirm:['']
+    first_name: new FormControl('', [Validators.required]),
+    last_name:new FormControl('', [Validators.required]),
+    gender:new FormControl('', [Validators.required]),
+    email:new FormControl('', [Validators.required]),
+    rue:new FormControl('', [Validators.required]),
+    commune:new FormControl('', [Validators.required]),
+    ville:new FormControl('', [Validators.required]),
+    birthDate:new FormControl('', [Validators.required]),
+    actif:new FormControl('', [Validators.required]),
+    gsm:new FormControl('', [Validators.required]),
+    grade:new FormControl('', [Validators.required]),
+    status:new FormControl('', [Validators.required]),
+    password:new FormControl('', [Validators.required]),
+    password_confirm:new FormControl('', [Validators.required])
 
   })
 
@@ -39,6 +39,7 @@ export class SignUpComponent {
   }
 
   async submit() {
+    if (this.userForm.invalid) { return; }
     console.log('user / submit', this.userForm.value);
 
     this.authService.signupUser(this.userForm.value)
@@ -47,9 +48,10 @@ export class SignUpComponent {
           console.log('Réponse du serveur :', res);
           this.response$ = res; // Si vous avez besoin de stocker la réponse          
           this.router.navigate(['/auth/login'])      
-         
+          alert("Bienvenue au Than Long, votre compte vient d'être créé");
         },
         (error) => {
+          this.errorMessage=error;
           console.error('Une erreur s\'est produite lors de la requête :', error);
           // Traitez l'erreur comme vous le souhaitez ici
         }
@@ -57,6 +59,8 @@ export class SignUpComponent {
   }
 
 }
+
+    
 
 
 
