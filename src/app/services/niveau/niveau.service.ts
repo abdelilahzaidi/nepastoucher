@@ -1,6 +1,6 @@
 import { HttpHeaders, HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, throwError } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +33,7 @@ export class NiveauService {
 }
 createLevel(level: any) {
   console.log('In service angular',level)
-  return this.http.post<any>(this.apiUrl+'/level',{...level})
+  return this.http.post<any>(this.apiUrl+'/level',{...level,program: parseInt(level.program)})
     .pipe(
       catchError((error: HttpErrorResponse) => {
         console.error('Une erreur s\'est produite lors de la requête :', error);
@@ -41,4 +41,10 @@ createLevel(level: any) {
       })
     );
 }
+
+
 }
+
+
+
+

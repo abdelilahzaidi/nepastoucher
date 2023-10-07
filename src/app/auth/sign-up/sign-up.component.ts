@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent {
-  errorMessage: any;
+  errorMessage: any =null;
   response$ :any;
   constructor(private fb : FormBuilder, private authService : AuthService,private router: Router, private $http: HttpClient){}
   userForm : FormGroup = this.fb.group({
@@ -44,23 +44,24 @@ export class SignUpComponent {
 
     this.authService.signupUser(this.userForm.value)
       .subscribe(
-        (res:any) => {
-          console.log('Réponse du serveur :', res);
-          this.response$ = res; // Si vous avez besoin de stocker la réponse          
-          this.router.navigate(['/auth/login'])      
-          alert("Bienvenue au Than Long, votre compte vient d'être créé");
-        },
-        (error) => {
-          this.errorMessage=error;
-          console.error('Une erreur s\'est produite lors de la requête :', error);
-          // Traitez l'erreur comme vous le souhaitez ici
+        {
+          next:(res:any) => {
+            console.log('Réponse du serveur :', res);
+            this.response$ = res; // Si vous avez besoin de stocker la réponse
+            this.router.navigate(['/auth/login'])
+            alert("Bienvenue au Than Long, votre compte vient d'être créé");
+          },
+          error:(error)=>{
+            console.error('Error Zaidi :',error.error)
+            this.errorMessage=error.error.message;
+          }
         }
       );
   }
 
 }
 
-    
+
 
 
 

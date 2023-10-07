@@ -52,6 +52,14 @@ export class NiveauListComponent  {
       });
     }
 
+    createNiveau() {
+      this.router.navigate(['/admin/niveau-new']);
+    }
+
+    updateNiveau() {
+      this.router.navigate(['/admin/niveau-edit']);
+    }
+
   // getlevelById(p: any) {
   //   console.log("Un prog")
   //   this.niveauService.getlevelById(p.id).subscribe({

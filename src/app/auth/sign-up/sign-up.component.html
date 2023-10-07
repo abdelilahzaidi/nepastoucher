@@ -1,9 +1,19 @@
 <div class="container mt-5 mb-5">
+
   <div class="card col-md-6 offset-3">
     <div class="card-header bg-primary">
       <h3 style="color:white;">Register</h3>
     </div>
-    <div class="card-body text-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+    <div class="d-flex align-items-center justify-content-center text-center">
+      <img
+        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+        style="width: 285px; margin-top: -30px"
+        alt="logo"
+      />
+      <div class="ml-3">
+        <h4 class="mt-1 mb-1 pb-1">Than Long </h4>
+      </div>
+    </div>
     <form [formGroup]="userForm" (ngSubmit)="submit()">
       <div class="row m-5">
         <div class="col-md-6">
@@ -25,9 +35,11 @@
           </div>
 
           <div class="mb-3">
+
             <label for="email" class="form-label" for="email">Email address</label>
             <input type="email" class="form-control" id="email" formControlName="email" placeholder="name@example.com"
               for="email">
+              <div *ngIf="errorMessage" class="text-danger"> {{errorMessage}} </div>
           </div>
 
           <div>

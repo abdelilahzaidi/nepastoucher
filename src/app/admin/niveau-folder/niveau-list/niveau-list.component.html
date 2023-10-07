@@ -5,9 +5,9 @@
 style="margin-left: 45px">
 
   <div style="display: flex; margin-top: 80px;">
-    <p class="me-5">Créer un nouveau user</p>
+    <p class="me-5">Créer un nouveau niveau</p>
 
-    <button class="btn btn-success" >
+    <button class="btn btn-success" (click)="createNiveau()">
       <i class="bi bi-person-plus-fill"></i>
     </button>
   </div>
@@ -24,7 +24,7 @@ style="margin-left: 45px">
         <td>{{ level.grade }}</td>
 
         <td>
-          <button class="btn btn-success" >
+          <button class="btn btn-success"  (click)="updateNiveau()">
             <i class="bi bi-pencil-fill"></i>
           </button>
         </td>

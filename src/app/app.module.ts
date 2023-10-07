@@ -25,15 +25,11 @@ import { FactureListComponent } from './admin/facture-folder/facture-list/factur
 import { MessageListComponent } from './admin/message-folder/message-list/message-list.component';
 import { CourListComponent } from './admin/cour-folder/cour-list/cour-list.component';
 import { DateCourListComponent } from './admin/date-cour-folder/date-cour-list/date-cour-list.component';
-
-
-
-
-
-
-
-
-
+import { ProgramDetailsComponent } from './admin/program-folder/program-details/program-details.component';
+import { ProgramNewComponent } from './admin/program-folder/program-new/program-new.component';
+import { ProgramEditComponent } from './admin/program-folder/program-edit/program-edit.component';
+import { NiveauNewComponent } from './admin/niveau-folder/niveau-new/niveau-new.component';
+import { NiveauEditComponent } from './admin/niveau-folder/niveau-edit/niveau-edit.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +49,11 @@ import { DateCourListComponent } from './admin/date-cour-folder/date-cour-list/d
     MessageListComponent,
     CourListComponent,
     DateCourListComponent,
+    ProgramDetailsComponent,
+    ProgramNewComponent,
+    ProgramEditComponent,
+    NiveauNewComponent,
+    NiveauEditComponent,
   ],
   imports: [
     BrowserModule,

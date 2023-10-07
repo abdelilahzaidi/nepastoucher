@@ -21,6 +21,11 @@ import { FactureListComponent } from './facture-folder/facture-list/facture-list
 import { CourListComponent } from './cour-folder/cour-list/cour-list.component';
 import { DateCourListComponent } from './date-cour-folder/date-cour-list/date-cour-list.component';
 import { AdminComponent } from './container/admin.component';
+import { ProgramDetailsComponent } from './program-folder/program-details/program-details.component';
+import { ProgramNewComponent } from './program-folder/program-new/program-new.component';
+import { ProgramEditComponent } from './program-folder/program-edit/program-edit.component';
+import { NiveauNewComponent } from './niveau-folder/niveau-new/niveau-new.component';
+import { NiveauEditComponent } from './niveau-folder/niveau-edit/niveau-edit.component';
 
 const routes: Routes = [
   { path: '', component: AdminComponent, canActivateChild: [ authAdminGuard()], children: [
@@ -40,10 +45,13 @@ const routes: Routes = [
     {path:'message-list',component:MessageListComponent},
     {path:'facture-list',component:FactureListComponent},
     {path:'cour-list',component:CourListComponent},
-    {path:'date-cour-list',component:DateCourListComponent}
-
+    {path:'date-cour-list',component:DateCourListComponent},
+    {path:'program-details/:id',component:ProgramDetailsComponent},
+    {path:'program-new',component:ProgramNewComponent},
+    {path:'program-edit/:id',component:ProgramEditComponent},
+    {path:'niveau-new',component:NiveauNewComponent},
+    {path:'niveau-edit',component:NiveauEditComponent}
   ]}
-
 ];
 
 @NgModule({

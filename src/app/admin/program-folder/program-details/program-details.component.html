@@ -1,0 +1,38 @@
+<div class="p-3 high-barre">
+  <div
+    *ngIf="program"
+    style="width: 90%; margin-right: 10px; margin-left: 45px; margin-top: 20px"
+  >
+    <ul class="navbar-nav" style="margin-left: 40px">
+      <li class="nav-item">
+        <a class="nav-link">Contenu du programme {{ program.title }} </a>
+      </li>
+    </ul>
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <table class="table">
+              <tr>
+                <th>Contenu</th>
+                <td>{{ program.contenu }}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  style="width: 90%; margin-right: 10px; margin-left: 45px; margin-top: 20px"
+>
+  <span style="display: flex; margin: 10px 10 px 10px 10px">
+    <div>
+      <button class="btn btn-success" style="display: flex">
+        <p style="margin-right: 10px">Activer ou desactiver le membre</p>
+        <i class="bi bi-pencil-fill"></i>
+      </button>
+    </div>
+  </span>
+</div>

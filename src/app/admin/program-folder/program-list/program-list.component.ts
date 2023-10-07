@@ -35,8 +35,6 @@ export class ProgramListComponent {
     this.getPrograms();
   }
 
-
-
   getPrograms() {
     console.log('Programs');
     this.httpClient
@@ -52,19 +50,59 @@ export class ProgramListComponent {
       });
     }
 
-  getProgramById(p: any) {
-    console.log("Un prog")
-    this.programService.getprogramById(p.id).subscribe({
-      next: (data) => {
-        this.program = data
-        console.log("PROGRAM", data)
-        console.log("program id", this.program.id, " ", p.id)
 
-       },
-      error: (err) => {
-        this.errorMessage = err.error;
-      },
-    })
+    getProgramById(p: any) {
+      this.programService.getprogramById(p.id).subscribe({
+        next: (data) => {
+          this.program = data;
+          console.log("user ",p.id," données : ",this.program)
+          this.router.navigate(['/admin/program-details', p.id]);
+        },
+        error: (err) => {
+          this.errorMessage = err.error;
+        },
+      });
+      console.log('Hello programme',p);
+    }
+
+
+
+
+
+
+    editProgramById($event:Event,p: any) {
+      $event.preventDefault();
+      $event.stopPropagation()
+      this.programService.getprogramById(p.id).subscribe({
+        next: (data) => {
+          this.program = data;
+          console.log("user ",p.id," données : ",this.program)
+          this.router.navigate(['/admin/program-edit', p.id]);
+        },
+        error: (err) => {
+          this.errorMessage = err.error;
+        },
+      });
+      console.log('Hello programme',p);
+    }
+
+  // getProgramById(p: any) {
+  //   console.log("Un prog")
+  //   this.programService.getprogramById(p.id).subscribe({
+  //     next: (data) => {
+  //       this.program = data
+  //       console.log("PROGRAM", data)
+  //       console.log("program id", this.program.id, " ", p.id)
+
+  //      },
+  //     error: (err) => {
+  //       this.errorMessage = err.error;
+  //     },
+  //   })
+  // }
+
+  createProgram(){
+    this.router.navigate(['/admin/program-new']);
   }
 
 }

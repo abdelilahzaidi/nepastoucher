@@ -1,6 +1,7 @@
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 export function fUserEdit(user: any): FormGroup {
+  console.log('UserFormGroup',user)
     return new FormGroup({
         first_name: new FormControl(user.first_name),
         last_name:new FormControl(user.last_name),
