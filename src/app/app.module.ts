@@ -35,6 +35,10 @@ import { LieuNewComponent } from './admin/lieu-folder/lieu-new/lieu-new.componen
 import { LieuEditComponent } from './admin/lieu-folder/lieu-edit/lieu-edit.component';
 import { CourNewComponent } from './admin/cour-folder/cour-new/cour-new.component';
 import { SeanceNewComponent } from './admin/seance-folder/seance-new/seance-new.component';
+import { AbonnementDetailsComponent } from './admin/abonnement-folder/abonnement-details/abonnement-details.component';
+import { AbonnementEditComponent } from './admin/abonnement-folder/abonnement-edit/abonnement-edit.component';
+import { AbonnementListComponent } from './admin/abonnement-folder/abonnement-list/abonnement-list.component';
+
 
 
 
@@ -67,6 +71,9 @@ import { SeanceNewComponent } from './admin/seance-folder/seance-new/seance-new.
     LieuEditComponent,
     CourNewComponent,
     SeanceNewComponent,
+    AbonnementListComponent,
+    AbonnementEditComponent,
+    AbonnementDetailsComponent,
   ],
   imports: [
     BrowserModule,

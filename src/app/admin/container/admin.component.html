@@ -1,4 +1,3 @@
-
 <div class="p-3 high-barre">
   <div style="flex-grow: 3" *ngIf="user$ | async as user">
     <div class="navbar navbar-light">
@@ -19,6 +18,22 @@
           </li>
         </ul>
         <ul
+        class="navbar-nav"
+        style=" display: flex; flex-direction: row"
+      >
+        <li>
+          <a class="nav-link" style="color: white"> profil </a>
+        </li>
+      </ul>
+        <ul
+          class="navbar-nav"
+          style="display: flex; flex-direction: row"
+        >
+          <li>
+            <a class="nav-link" style="color: white"> message </a>
+          </li>
+        </ul>
+        <ul
           class="navbar-nav"
           style="margin-right: 10px; display: flex; flex-direction: row"
         >
@@ -27,7 +42,6 @@
           </li>
         </ul>
       </div>
-
     </div>
     <app-high-barre baseUri="/admin"></app-high-barre>
   </div>

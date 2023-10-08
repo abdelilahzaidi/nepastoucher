@@ -31,6 +31,9 @@ import { LieuNewComponent } from './lieu-folder/lieu-new/lieu-new.component';
 import { LieuEditComponent } from './lieu-folder/lieu-edit/lieu-edit.component';
 import { CourNewComponent } from './cour-folder/cour-new/cour-new.component';
 import { SeanceNewComponent } from './seance-folder/seance-new/seance-new.component';
+import { AbonnementDetailsComponent } from './abonnement-folder/abonnement-details/abonnement-details.component';
+import { AbonnementListComponent } from './abonnement-folder/abonnement-list/abonnement-list.component';
+import { AbonnementEditComponent } from './abonnement-folder/abonnement-edit/abonnement-edit.component';
 
 
 const routes: Routes = [
@@ -61,7 +64,10 @@ const routes: Routes = [
     {path:'lieu-new',component:LieuNewComponent},
     {path:'lieu-edit/:id',component:LieuEditComponent},
     {path:'cour-new',component:CourNewComponent},
-    {path:'seance-new',component:SeanceNewComponent}
+    {path:'seance-new',component:SeanceNewComponent},
+    {path:'abonnement-list',component:AbonnementListComponent},
+    {path:'abonnement-details',component:AbonnementDetailsComponent},
+    {path:'abonnemnt-edit',component:AbonnementEditComponent}
   ]}
 ];
 
