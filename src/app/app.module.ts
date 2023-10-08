@@ -33,6 +33,9 @@ import { NiveauEditComponent } from './admin/niveau-folder/niveau-edit/niveau-ed
 import { HoraireNewComponent } from './admin/horaire-folder/horaire-new/horaire-new.component';
 import { LieuNewComponent } from './admin/lieu-folder/lieu-new/lieu-new.component';
 import { LieuEditComponent } from './admin/lieu-folder/lieu-edit/lieu-edit.component';
+import { CourNewComponent } from './admin/cour-folder/cour-new/cour-new.component';
+import { SeanceNewComponent } from './admin/seance-folder/seance-new/seance-new.component';
+
 
 
 
@@ -62,6 +65,8 @@ import { LieuEditComponent } from './admin/lieu-folder/lieu-edit/lieu-edit.compo
     HoraireNewComponent,
     LieuNewComponent,
     LieuEditComponent,
+    CourNewComponent,
+    SeanceNewComponent,
   ],
   imports: [
     BrowserModule,

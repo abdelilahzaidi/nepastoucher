@@ -29,6 +29,8 @@ import { NiveauEditComponent } from './niveau-folder/niveau-edit/niveau-edit.com
 import { HoraireNewComponent } from './horaire-folder/horaire-new/horaire-new.component';
 import { LieuNewComponent } from './lieu-folder/lieu-new/lieu-new.component';
 import { LieuEditComponent } from './lieu-folder/lieu-edit/lieu-edit.component';
+import { CourNewComponent } from './cour-folder/cour-new/cour-new.component';
+import { SeanceNewComponent } from './seance-folder/seance-new/seance-new.component';
 
 
 const routes: Routes = [
@@ -57,7 +59,9 @@ const routes: Routes = [
     {path:'niveau-edit',component:NiveauEditComponent},
     {path:'horaire-new',component:HoraireNewComponent},
     {path:'lieu-new',component:LieuNewComponent},
-    {path:'lieu-edit/:id',component:LieuEditComponent}
+    {path:'lieu-edit/:id',component:LieuEditComponent},
+    {path:'cour-new',component:CourNewComponent},
+    {path:'seance-new',component:SeanceNewComponent}
   ]}
 ];
 

@@ -51,6 +51,10 @@ export class SeanceListComponent {
       });
     }
 
+    createSeance(){
+      this.router.navigate(['/admin/seance-new']);
+    }
+
   // getseanceById(p: any) {
   //   console.log("Un prog")
   //   this.niveauService.getseanceById(p.id).subscribe({

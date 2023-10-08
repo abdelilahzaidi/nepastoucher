@@ -52,6 +52,10 @@ export class CourListComponent {
       });
     }
 
+    createCour(){
+      this.router.navigate(['/admin/cour-new']);
+    }
+    editeCour($event :Event,c :any){}
   // getlieuById(p: any) {
   //   console.log("Un prog")
   //   this.courservice.getlieuById(p.id).subscribe({
