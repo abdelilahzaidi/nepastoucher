@@ -56,8 +56,41 @@ export class NiveauListComponent  {
       this.router.navigate(['/admin/niveau-new']);
     }
 
-    updateNiveau() {
-      this.router.navigate(['/admin/niveau-edit']);
+
+
+
+    editNiveauById($event: Event,l: any) {
+      $event.preventDefault();
+      $event.stopPropagation();
+      this.niveauService.getLevelById(l.id).subscribe({
+        next: (data) => {
+          this.level = data;
+          console.log("Niveau ID : ", l.id, " données : ", this.level)
+          this.router.navigate(['/admin/niveau-edit', l.id]);
+        },
+        error: (err) => {
+          this.errorMessage = err.error;
+        },
+      });
+    }
+
+
+
+    handleDeleteNiveau($event: Event,l: any) {
+      $event.preventDefault();
+      $event.stopPropagation();
+      let conf = confirm('Êtes-vous sûr de vouloir supprimer ce program ?');
+      if (conf == false) return;
+      this.currentAction = 'handleDeleteUser';
+      this.niveauService.deleteLevel(l.id).subscribe({
+        next: (data) => {
+          let index = this.levels.indexOf(l);
+          this.levels.splice(index, 1);
+        },
+        error: (err) => {
+          this.errorMessage = err.error;
+        },
+      });
     }
 
   // getlevelById(p: any) {

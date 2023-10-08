@@ -30,6 +30,11 @@ import { ProgramNewComponent } from './admin/program-folder/program-new/program-
 import { ProgramEditComponent } from './admin/program-folder/program-edit/program-edit.component';
 import { NiveauNewComponent } from './admin/niveau-folder/niveau-new/niveau-new.component';
 import { NiveauEditComponent } from './admin/niveau-folder/niveau-edit/niveau-edit.component';
+import { HoraireNewComponent } from './admin/horaire-folder/horaire-new/horaire-new.component';
+import { LieuNewComponent } from './admin/lieu-folder/lieu-new/lieu-new.component';
+import { LieuEditComponent } from './admin/lieu-folder/lieu-edit/lieu-edit.component';
+
+
 
 @NgModule({
   declarations: [
@@ -54,6 +59,9 @@ import { NiveauEditComponent } from './admin/niveau-folder/niveau-edit/niveau-ed
     ProgramEditComponent,
     NiveauNewComponent,
     NiveauEditComponent,
+    HoraireNewComponent,
+    LieuNewComponent,
+    LieuEditComponent,
   ],
   imports: [
     BrowserModule,

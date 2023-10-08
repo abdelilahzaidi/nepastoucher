@@ -52,6 +52,16 @@ export class LieuListComponent  {
       });
     }
 
+    createLieu(){
+      this.router.navigate(['/admin/lieu-new']);
+    }
+
+    editeLieu($event: Event,l: any) {
+      $event.preventDefault();
+      $event.stopPropagation();
+      this.router.navigate(['/admin/lieu-edit',l.id]);
+    }
+
   // getlieuById(p: any) {
   //   console.log("Un prog")
   //   this.lieuService.getlieuById(p.id).subscribe({

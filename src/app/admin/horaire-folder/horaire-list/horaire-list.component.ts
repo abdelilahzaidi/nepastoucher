@@ -51,6 +51,66 @@ export class HoraireListComponent {
       });
     }
 
+
+    createHoraire(){
+      this.router.navigate(['/admin/horaire-new']);
+    }
+
+    gethoraireById(p: any) {
+      this.horaireService.getHoraireById(p.id).subscribe({
+        next: (data) => {
+          this.horaire = data;
+          console.log("user ",p.id," données : ",this.horaire)
+          this.router.navigate(['/admin/horaire-details', p.id]);
+        },
+        error: (err) => {
+          this.errorMessage = err.error;
+        },
+      });
+      console.log('Hello horaireme',p);
+    }
+
+
+
+
+
+
+    editHoraireById($event:Event,h: any) {
+      $event.preventDefault();
+      $event.stopPropagation()
+      this.horaireService.getHoraireById(h.id).subscribe({
+        next: (data) => {
+          this.horaire = data;
+          console.log("user ",h.id," données : ",this.horaire)
+          this.router.navigate(['/admin/horaire-edit', h.id]);
+        },
+        error: (err) => {
+          this.errorMessage = err.error;
+        },
+      });
+      console.log('Hello horaireme',h);
+    }
+
+  createhoraire(){
+    this.router.navigate(['/admin/horaire-new']);
+  }
+  handleDeletehoraire($event: Event,h: any) {
+    $event.preventDefault();
+    $event.stopPropagation();
+    let conf = confirm('Êtes-vous sûr de vouloir supprimer ce horaire ?');
+    if (conf == false) return;
+    this.currentAction = 'handleDeleteUser';
+    this.horaireService.deleteHoraire(h.id).subscribe({
+      next: (data) => {
+        let index = this.horaires.indexOf(h);
+        this.horaires.splice(index, 1);
+      },
+      error: (err) => {
+        this.errorMessage = err.error;
+      },
+    });
+  }
+
   // gethoraireById(p: any) {
   //   console.log("Un prog")
   //   this.niveauService.gethoraireById(p.id).subscribe({

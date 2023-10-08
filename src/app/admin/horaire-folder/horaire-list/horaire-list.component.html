@@ -1,53 +1,73 @@
-<div class="container m-5">
-  <div class="card-header m-5">
-    Les horaires
-  </div>
-  <div
-    class="d-flex justify-content-center align-items-center"
-    class="create-user"
-    style="margin-left: 45px"
-  >
-  <div class="card">
-    <div class="card-body">
-      <div class="row">
-        <div class="col-md-6">
-          <table class="table" *ngFor="let horaire of horaires" (click)="gethoraires()">
-            <tr>
-              <th>Jour de cour</th>
-              <td>{{ horaire.jour }}</td>
-            </tr>
-            <tr>
-              <th>Heure de début</th>
-              <td>{{ horaire.heureDebut }}</td>
-            </tr>
-            <tr>
-              <th>Heure de fin</th>
-              <td>{{ horaire.heureFin }}</td>
-            </tr>
-            <tr>
-              <th>Modifier l'horaires</th>
-              <td>
+<div class="row m-5">
+  <div style="display: flex; margin-top: 80px;" class="mb-5">
+    <p class="mt-3">Créer un nouveau horaire</p>
 
-                
-              <span style="display:flex; margin : 10px 10 px 10px 10px">
-                <div>
-                  <button class="btn btn-primary" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-                  data-bs-original-title="Popover Title"
-                  aria-describedby="popover344544"
-                  data-bs-placement="bottom"
-                   style="display:flex;">
-                    <p style="margin-right: 10px;">Modifier</p>
-                    <i class="bi bi-pencil-fill"></i>
-                  </button>
-                </div>
-              </span>
-              </td>
-            </tr>
-          </table>
+    <button class="btn btn-success m-2" (click)="createHoraire()">
+      <i class="bi bi-person-plus-fill"></i>
+    </button>
+  </div>
+  <div class="row">
+    <div
+      class="col-md-3 col-lg-3"
+      *ngFor="let horaire of horaires"
+      (click)="gethoraires()"
+    >
+      <div class="card">
+        <div class="card-header bg-primary" style="color: white">
+          <h4 class="card-title">
+            Jour du <span> {{ horaire.jour }}</span>
+          </h4>
+        </div>
+
+        <div class="card-body">
+          <div class="card-title">
+            <div class="badge bg-primary">Horaire</div>
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              {{ horaire.heureDebut }} - {{ horaire.heureFin }}
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div
+            style="display: flex; justify-content: center; align-items: center" class="m-1"
+          >
+            <button
+              class="btn btn-primary m-1"
+              data-bs-toggle="popover"
+              data-bs-placement="bottom"
+              data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+              data-bs-original-title="Popover Title"
+              aria-describedby="popover344544"
+              data-bs-placement="bottom"
+              style="display: flex"
+            >
+              <p style="margin-right: 5px">Modifier</p>
+              <i class="bi bi-pencil-fill"></i>
+            </button>
+
+              <button
+                class="btn btn-primary m-1"
+                data-bs-toggle="popover"
+                data-bs-placement="bottom"
+                data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                data-bs-original-title="Popover Title"
+                aria-describedby="popover344544"
+                data-bs-placement="bottom"
+                style="display: flex"
+                (click)="handleDeletehoraire($event,horaire)"
+              >
+                <p style="margin-right: 5px">Supprimer</p>
+                <i class="bi bi-pencil-fill"></i>
+              </button>
+            </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-

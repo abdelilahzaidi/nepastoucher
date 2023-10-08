@@ -73,8 +73,24 @@ export class UserListComponent implements OnInit {
   }
 
 
-  createUser() {    
+  createUser() {
     this.router.navigate(['/admin/user-new']);
+  }
+  handleDeleteUser($event: Event,u: any) {
+    $event.preventDefault();
+    $event.stopPropagation();
+    let conf = confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');
+    if (conf == false) return;
+    this.currentAction = 'handleDeleteUser';
+    this.userService.deleteUser(u.id).subscribe({
+      next: (data) => {
+        let index = this.users.indexOf(u);
+        this.users.splice(index, 1);
+      },
+      error: (err) => {
+        this.errorMessage = err.error;
+      },
+    });
   }
 }
 

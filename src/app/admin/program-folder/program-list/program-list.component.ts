@@ -86,23 +86,24 @@ export class ProgramListComponent {
       console.log('Hello programme',p);
     }
 
-  // getProgramById(p: any) {
-  //   console.log("Un prog")
-  //   this.programService.getprogramById(p.id).subscribe({
-  //     next: (data) => {
-  //       this.program = data
-  //       console.log("PROGRAM", data)
-  //       console.log("program id", this.program.id, " ", p.id)
-
-  //      },
-  //     error: (err) => {
-  //       this.errorMessage = err.error;
-  //     },
-  //   })
-  // }
-
   createProgram(){
     this.router.navigate(['/admin/program-new']);
+  }
+  handleDeleteProgram($event: Event,p: any) {
+    $event.preventDefault();
+    $event.stopPropagation();
+    let conf = confirm('Êtes-vous sûr de vouloir supprimer ce program ?');
+    if (conf == false) return;
+    this.currentAction = 'handleDeleteUser';
+    this.programService.deleteprogram(p.id).subscribe({
+      next: (data) => {
+        let index = this.programs.indexOf(p);
+        this.programs.splice(index, 1);
+      },
+      error: (err) => {
+        this.errorMessage = err.error;
+      },
+    });
   }
 
 }

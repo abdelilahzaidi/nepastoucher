@@ -1,5 +1,5 @@
 import { UserEditComponent } from './user-folder/user-edit/user-edit.component';
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserNewComponent } from './user-folder/user-new/user-new.component';
 import { UserComponent } from './user-folder/user/user.component';
@@ -26,6 +26,10 @@ import { ProgramNewComponent } from './program-folder/program-new/program-new.co
 import { ProgramEditComponent } from './program-folder/program-edit/program-edit.component';
 import { NiveauNewComponent } from './niveau-folder/niveau-new/niveau-new.component';
 import { NiveauEditComponent } from './niveau-folder/niveau-edit/niveau-edit.component';
+import { HoraireNewComponent } from './horaire-folder/horaire-new/horaire-new.component';
+import { LieuNewComponent } from './lieu-folder/lieu-new/lieu-new.component';
+import { LieuEditComponent } from './lieu-folder/lieu-edit/lieu-edit.component';
+
 
 const routes: Routes = [
   { path: '', component: AdminComponent, canActivateChild: [ authAdminGuard()], children: [
@@ -50,7 +54,10 @@ const routes: Routes = [
     {path:'program-new',component:ProgramNewComponent},
     {path:'program-edit/:id',component:ProgramEditComponent},
     {path:'niveau-new',component:NiveauNewComponent},
-    {path:'niveau-edit',component:NiveauEditComponent}
+    {path:'niveau-edit',component:NiveauEditComponent},
+    {path:'horaire-new',component:HoraireNewComponent},
+    {path:'lieu-new',component:LieuNewComponent},
+    {path:'lieu-edit/:id',component:LieuEditComponent}
   ]}
 ];
 
