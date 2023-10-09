@@ -38,6 +38,15 @@ export class SessionService {
     this.token$.next(data.token);
   }
 
+  refresh(data: { token?: string, user?: any}) {
+    if (data.token) {
+      this.token$.next(data.token!)
+    }
+    if (data.user) {
+      this.user$.next(data.user!)
+    }
+  }
+
   close() {
     this.user$.next(null);
     this.token$.next(null);

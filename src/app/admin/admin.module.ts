@@ -15,6 +15,7 @@ import { UserListComponent } from './user-folder/user-list/user-list.component';
 import { UserDetailsComponent } from './user-folder/user-details/user-details.component';
 import { ProgramListComponent } from './program-folder/program-list/program-list.component';
 import { HighBarreComponent } from "../shared/high-barre/high-barre.component";
+import { UserProgramComponent } from './user-folder/user-program/user-program.component';
 
 
 
@@ -29,7 +30,8 @@ import { HighBarreComponent } from "../shared/high-barre/high-barre.component";
         DashboardComponent,
         UserListComponent,
         UserDetailsComponent,
-        ProgramListComponent
+        ProgramListComponent,
+        UserProgramComponent
     ],
     imports: [
         CommonModule,

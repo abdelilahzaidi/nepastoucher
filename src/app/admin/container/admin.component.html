@@ -22,7 +22,14 @@
         style=" display: flex; flex-direction: row"
       >
         <li>
-          <a class="nav-link" style="color: white"> profil </a>
+          <a class="nav-link" style="color: white" [routerLink]="['/admin', 'user-details', currentId$ |async]"> profil </a>
+        </li>
+      </ul>
+      <ul  class="navbar-nav"
+      style="display: flex; flex-direction: row">
+        
+        <li>
+          <a class="nav-link" style="color: white" [routerLink]="['/user', currentId$ |async,  'program']"> program </a>
         </li>
       </ul>
         <ul

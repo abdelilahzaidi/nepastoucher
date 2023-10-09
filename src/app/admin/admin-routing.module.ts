@@ -34,10 +34,12 @@ import { SeanceNewComponent } from './seance-folder/seance-new/seance-new.compon
 import { AbonnementDetailsComponent } from './abonnement-folder/abonnement-details/abonnement-details.component';
 import { AbonnementListComponent } from './abonnement-folder/abonnement-list/abonnement-list.component';
 import { AbonnementEditComponent } from './abonnement-folder/abonnement-edit/abonnement-edit.component';
+import { UserProgramComponent } from './user-folder/user-program/user-program.component';
 
 
 const routes: Routes = [
   { path: '', component: AdminComponent, canActivateChild: [ authAdminGuard()], children: [
+    { path: 'user/:id/program', component: UserProgramComponent },
     // {path:'dashboard',component:DashboardComponent}, // /admin
     {path:'user-list',component:UserListComponent}, // /admin/user-list
     {path:'user-new',component:UserNewComponent},

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HoraireService } from 'src/app/services/horaire/horaire.service';
+import { format } from 'date-fns';
 
 @Component({
   selector: 'app-horaire-list',
@@ -17,6 +18,7 @@ export class HoraireListComponent {
     private horaireService: HoraireService,
     private router: Router
   ) {}
+
   apiUrl = 'http://localhost:3001';
   user: any;
   horaire: any;
@@ -42,8 +44,11 @@ export class HoraireListComponent {
       .get<any[]>('http://localhost:3001/horaire')
       .subscribe({
         next: (data) => {
-          this.horaires = data as [];
-          console.log('Niveaux', this.horaires);
+          this.horaires = data.map(it => ({
+            ...it,
+            jour: format(new Date(it.jour), 'yyyy-MM-dd'),
+            heureDebut: it.heureDebut.split(':').slice(0,2).join(':'),  heureFin: it.heureFin.split(':').slice(0,2).join(':')
+          }));
         },
         error: (err: any) => {
           console.log(err);
